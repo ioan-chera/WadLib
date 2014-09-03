@@ -4,8 +4,13 @@
 Lump::Lump(const Lump& o) : m_contentSize(o.m_contentSize)
 {
     strcpy(m_name, o.m_name);
-    m_content = new unsigned char[m_contentSize];
-    memcpy(m_content, o.m_content, m_contentSize);
+    if (m_contentSize)
+    {
+        m_content = new unsigned char[m_contentSize];
+        memcpy(m_content, o.m_content, m_contentSize);
+    }
+    else
+        m_content = nullptr;
 }
 
 Lump::Lump(Lump&& o) : m_content(o.m_content), m_contentSize(o.m_contentSize)
@@ -21,8 +26,14 @@ Lump& Lump::operator = (const Lump& o)
         return *this;
     strcpy(m_name, o.m_name);
     delete[] m_content;
-    m_content = new unsigned char[m_contentSize = o.m_contentSize];
-    memcpy(m_content, o.m_content, m_contentSize);
+    m_contentSize = o.m_contentSize;
+    if (m_contentSize)
+    {
+        m_content = new unsigned char[m_contentSize = o.m_contentSize];
+        memcpy(m_content, o.m_content, m_contentSize);
+    }
+    else
+        m_content = nullptr;
     return *this;
 }
 
@@ -50,9 +61,15 @@ bool Lump::operator == (const Lump& o) const
 void Lump::SetContent(const void* content, size_t size)
 {
     delete[] m_content;
-    m_content = new unsigned char[size];
+    if (size > 0)
+    {
+        m_content = new unsigned char[size];
+        memcpy(m_content, content, size);
+    }
+    else
+        m_content = nullptr;
     m_contentSize = size;
-    memcpy(m_content, content, size);
+    
 }
 
 void Lump::SetName(const char* name)
