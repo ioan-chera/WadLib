@@ -44,7 +44,7 @@ WadLoadResult Wad::LoadFile(const char* filename)
    {
       fread(&filepos, 4, 1, f);
       fread(&new_lumpsizes[i], 4, 1, f);
-      if (new_lumpsizes[i] < 0 || new_lumpsizes[i] > 0 && (filepos < 12 || filepos + new_lumpsizes[i] > filesize))
+       if (new_lumpsizes[i] < 0 || (new_lumpsizes[i] > 0 && (filepos < 12 || filepos + new_lumpsizes[i] > filesize)))
       {
          delete[] new_lumpsizes;
          delete[] new_names[0];
