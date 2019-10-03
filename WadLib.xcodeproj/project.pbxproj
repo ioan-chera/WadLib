@@ -13,10 +13,11 @@
 		4F5E98DE2345E01500AB2810 /* Wad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E98D62345E01500AB2810 /* Wad.cpp */; };
 		4F5E98DF2345E01500AB2810 /* Lump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E98D72345E01500AB2810 /* Lump.cpp */; };
 		4F5E98E02345E01500AB2810 /* targetver.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5E98D82345E01500AB2810 /* targetver.h */; };
-		4F5E98E12345E01500AB2810 /* WadLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E98D92345E01500AB2810 /* WadLib.cpp */; };
 		4F5E98E22345E01500AB2810 /* Lump.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5E98DA2345E01500AB2810 /* Lump.h */; };
 		4F5E98EA2345E85F00AB2810 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E98E92345E85F00AB2810 /* main.cpp */; };
 		4F5E98EF2345E87500AB2810 /* libWadLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5E98CB2345DFE400AB2810 /* libWadLib.a */; };
+		4F5E98F22345EBE500AB2810 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E98F02345EBE500AB2810 /* Level.cpp */; };
+		4F5E98F32345EBE500AB2810 /* Level.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5E98F12345EBE500AB2810 /* Level.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,10 +40,11 @@
 		4F5E98D62345E01500AB2810 /* Wad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wad.cpp; path = WadLib/Wad.cpp; sourceTree = "<group>"; };
 		4F5E98D72345E01500AB2810 /* Lump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Lump.cpp; path = WadLib/Lump.cpp; sourceTree = "<group>"; };
 		4F5E98D82345E01500AB2810 /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = WadLib/targetver.h; sourceTree = "<group>"; };
-		4F5E98D92345E01500AB2810 /* WadLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WadLib.cpp; path = WadLib/WadLib.cpp; sourceTree = "<group>"; };
 		4F5E98DA2345E01500AB2810 /* Lump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lump.h; path = WadLib/Lump.h; sourceTree = "<group>"; };
 		4F5E98E72345E85F00AB2810 /* WadLibTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WadLibTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5E98E92345E85F00AB2810 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4F5E98F02345EBE500AB2810 /* Level.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = WadLib/Level.cpp; sourceTree = "<group>"; };
+		4F5E98F12345EBE500AB2810 /* Level.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Level.h; path = WadLib/Level.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,8 @@
 		4F5E98D22345E00500AB2810 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4F5E98F02345EBE500AB2810 /* Level.cpp */,
+				4F5E98F12345EBE500AB2810 /* Level.h */,
 				4F5E98D72345E01500AB2810 /* Lump.cpp */,
 				4F5E98DA2345E01500AB2810 /* Lump.h */,
 				4F5E98D32345E01400AB2810 /* stdafx.cpp */,
@@ -95,7 +99,6 @@
 				4F5E98D82345E01500AB2810 /* targetver.h */,
 				4F5E98D62345E01500AB2810 /* Wad.cpp */,
 				4F5E98D52345E01500AB2810 /* Wad.h */,
-				4F5E98D92345E01500AB2810 /* WadLib.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5E98DC2345E01500AB2810 /* stdafx.h in Headers */,
+				4F5E98F32345EBE500AB2810 /* Level.h in Headers */,
 				4F5E98DD2345E01500AB2810 /* Wad.h in Headers */,
 				4F5E98E22345E01500AB2810 /* Lump.h in Headers */,
 				4F5E98E02345E01500AB2810 /* targetver.h in Headers */,
@@ -209,7 +213,7 @@
 			files = (
 				4F5E98DF2345E01500AB2810 /* Lump.cpp in Sources */,
 				4F5E98DE2345E01500AB2810 /* Wad.cpp in Sources */,
-				4F5E98E12345E01500AB2810 /* WadLib.cpp in Sources */,
+				4F5E98F22345EBE500AB2810 /* Level.cpp in Sources */,
 				4F5E98DB2345E01500AB2810 /* stdafx.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

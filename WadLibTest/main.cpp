@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include "Level.h"
 #include "Wad.h"
 
 int main(int argc, const char * argv[])
@@ -22,6 +23,11 @@ int main(int argc, const char * argv[])
     for(const auto &lump : wad.lumps())
         printf("Lump %s size %zu\n", lump.name(), lump.data().size());
 
+    for(const auto &level : Level::getLevels(wad.lumps()))
+    {
+        printf("Level %s has %zu vertices, %zu sectors, %zu linedefs\n", level.name(),
+               level.vertices().size(), level.sectors().size(), level.linedefs().size());
+    }
     
     return 0;
 }
