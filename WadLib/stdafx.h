@@ -7,11 +7,11 @@
 
 #include "targetver.h"
 
+#include <errno.h>
 #include <stdio.h>
 #ifdef _WIN32
 #include <tchar.h>
 #endif
 
-
-// TODO: reference additional headers your program requires here
 #include <string>
+#include <vector>

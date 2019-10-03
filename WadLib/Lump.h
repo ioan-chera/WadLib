@@ -1,28 +1,28 @@
 #pragma once
+
+//
+// WAD data element
+//
 class Lump
 {
 public:
-    Lump()
+    bool load(FILE *f, const char *name, int address, int size);
+    bool operator == (const Lump& o) const
     {
-        m_name[0] = 0;
-    }
-    Lump(const Lump& o);
-    Lump(Lump&& o);
-    ~Lump()
-    {
-        delete[] m_content;
+        return mName == o.mName && mData == o.mData;
     }
 
-    Lump& operator = (const Lump& o);
-    Lump& operator = (Lump&& o);
-    bool operator == (const Lump& o) const;
-
-    void SetContent(const void* content, size_t size);
-    void SetName(const char* name);
+    void SetContent(const void* content, size_t size)
+    {
+        auto byteContent = static_cast<const uint8_t *>(content);
+        mData.assign(byteContent, byteContent + size);
+    }
+    void SetName(const char* name)
+    {
+        mName = name;
+    }
 
 private:
-    char            m_name[9];
-    unsigned char*  m_content = nullptr;
-    size_t          m_contentSize = 0;
+    std::string mName;
+    std::vector<uint8_t> mData;
 };
-
