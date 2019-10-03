@@ -6,6 +6,7 @@
 enum WadLoadResultType
 {
    WadLoadOK,
+    WadLoadBadArg,
    WadLoadCannotOpenErrno,
    WadLoadBadType,
    WadLoadBadSizes,
@@ -16,6 +17,13 @@ struct WadLoadResult
 {
     WadLoadResultType type;
     int index;
+
+    bool failed() const
+    {
+        return type != WadLoadOK;
+    }
+
+    std::string message() const;
 };
 
 enum WadType
@@ -34,6 +42,10 @@ class Wad
     std::vector<Lump> mLumps;
 public:
    WadLoadResult LoadFile(const char* filename);
+    const std::vector<Lump> &lumps() const
+    {
+        return mLumps;
+    }
 };
 
 #endif

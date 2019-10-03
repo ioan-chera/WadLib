@@ -15,7 +15,21 @@
 		4F5E98E02345E01500AB2810 /* targetver.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5E98D82345E01500AB2810 /* targetver.h */; };
 		4F5E98E12345E01500AB2810 /* WadLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E98D92345E01500AB2810 /* WadLib.cpp */; };
 		4F5E98E22345E01500AB2810 /* Lump.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5E98DA2345E01500AB2810 /* Lump.h */; };
+		4F5E98EA2345E85F00AB2810 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5E98E92345E85F00AB2810 /* main.cpp */; };
+		4F5E98EF2345E87500AB2810 /* libWadLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5E98CB2345DFE400AB2810 /* libWadLib.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4F5E98E52345E85F00AB2810 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4F5E98CB2345DFE400AB2810 /* libWadLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWadLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +41,8 @@
 		4F5E98D82345E01500AB2810 /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = WadLib/targetver.h; sourceTree = "<group>"; };
 		4F5E98D92345E01500AB2810 /* WadLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WadLib.cpp; path = WadLib/WadLib.cpp; sourceTree = "<group>"; };
 		4F5E98DA2345E01500AB2810 /* Lump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lump.h; path = WadLib/Lump.h; sourceTree = "<group>"; };
+		4F5E98E72345E85F00AB2810 /* WadLibTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WadLibTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F5E98E92345E85F00AB2810 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4F5E98E42345E85F00AB2810 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5E98EF2345E87500AB2810 /* libWadLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,7 +68,9 @@
 			isa = PBXGroup;
 			children = (
 				4F5E98D22345E00500AB2810 /* Source */,
+				4F5E98E82345E85F00AB2810 /* WadLibTest */,
 				4F5E98CC2345DFE400AB2810 /* Products */,
+				4F5E98EE2345E87500AB2810 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -54,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5E98CB2345DFE400AB2810 /* libWadLib.a */,
+				4F5E98E72345E85F00AB2810 /* WadLibTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +98,21 @@
 				4F5E98D92345E01500AB2810 /* WadLib.cpp */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		4F5E98E82345E85F00AB2810 /* WadLibTest */ = {
+			isa = PBXGroup;
+			children = (
+				4F5E98E92345E85F00AB2810 /* main.cpp */,
+			);
+			path = WadLibTest;
+			sourceTree = "<group>";
+		};
+		4F5E98EE2345E87500AB2810 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +149,23 @@
 			productReference = 4F5E98CB2345DFE400AB2810 /* libWadLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		4F5E98E62345E85F00AB2810 /* WadLibTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F5E98EB2345E85F00AB2810 /* Build configuration list for PBXNativeTarget "WadLibTest" */;
+			buildPhases = (
+				4F5E98E32345E85F00AB2810 /* Sources */,
+				4F5E98E42345E85F00AB2810 /* Frameworks */,
+				4F5E98E52345E85F00AB2810 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WadLibTest;
+			productName = WadLibTest;
+			productReference = 4F5E98E72345E85F00AB2810 /* WadLibTest */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -117,6 +176,9 @@
 				ORGANIZATIONNAME = "Ioan Chera";
 				TargetAttributes = {
 					4F5E98CA2345DFE400AB2810 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					4F5E98E62345E85F00AB2810 = {
 						CreatedOnToolsVersion = 11.0;
 					};
 				};
@@ -135,6 +197,7 @@
 			projectRoot = "";
 			targets = (
 				4F5E98CA2345DFE400AB2810 /* WadLib */,
+				4F5E98E62345E85F00AB2810 /* WadLibTest */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +211,14 @@
 				4F5E98DE2345E01500AB2810 /* Wad.cpp in Sources */,
 				4F5E98E12345E01500AB2810 /* WadLib.cpp in Sources */,
 				4F5E98DB2345E01500AB2810 /* stdafx.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F5E98E32345E85F00AB2810 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5E98EA2345E85F00AB2810 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +356,26 @@
 			};
 			name = Release;
 		};
+		4F5E98EC2345E85F00AB2810 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66L236F264;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4F5E98ED2345E85F00AB2810 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66L236F264;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -302,6 +393,15 @@
 			buildConfigurations = (
 				4F5E98D02345DFE400AB2810 /* Debug */,
 				4F5E98D12345DFE400AB2810 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F5E98EB2345E85F00AB2810 /* Build configuration list for PBXNativeTarget "WadLibTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F5E98EC2345E85F00AB2810 /* Debug */,
+				4F5E98ED2345E85F00AB2810 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,16 +1,39 @@
 #include "stdafx.h"
 #include "Wad.h"
 
+//
+// Check the result and form a string
+//
+std::string WadLoadResult::message() const
+{
+    switch (type)
+    {
+        case WadLoadBadArg:
+            return "Bad argument";
+        case WadLoadBadLumpIndex:
+            return std::string("Bad lump at index ") + std::to_string(index);
+        case WadLoadBadSizes:
+            return "Bad data block sizes";
+        case WadLoadBadType:
+            return "Bad WAD type in header (not IWAD or PWAD)";
+        case WadLoadCannotOpenErrno:
+            return std::string("Cannot open file, error ") + std::to_string(index);
+        case WadLoadOK:
+            return "Successful";
+    }
+}
+
 WadLoadResult Wad::LoadFile(const char* filename)
 {
-   // open wad and cache everything, in one place
-   FILE* f = fopen(filename, "rb");
+    if(!filename)
+        return { WadLoadBadArg };
+
+    FILE* f = fopen(filename, "rb");
 
    if (!f)
        return { WadLoadCannotOpenErrno, errno };
 
     char sign_header[4] = {};
-   WadType new_type;
 
    fread(sign_header, 1, 4, f);
    if (!memcmp(sign_header, "PWAD", 4))
@@ -61,5 +84,6 @@ WadLoadResult Wad::LoadFile(const char* filename)
         mLumps.push_back(lump);
     }
 
+    fclose(f);
     return { WadLoadOK };
 }

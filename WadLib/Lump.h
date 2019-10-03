@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <vector>
+
 //
 // WAD data element
 //
@@ -20,6 +23,16 @@ public:
     void SetName(const char* name)
     {
         mName = name;
+    }
+
+    const char *name() const
+    {
+        return mName.c_str();
+    }
+
+    const std::vector<uint8_t> &data() const
+    {
+        return mData;
     }
 
 private:
